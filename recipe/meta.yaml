@@ -13,24 +13,22 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: ${PYTHON} setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - py.test = py.test:main
     - pytest = py.test:main
 
 requirements:
-  build:
+  host:
     - python
     - py >=1.4.33
     - setuptools
     - setuptools_scm
-    - argparse  # [py26]
     - colorama  # [win]
   run:
     - python
     - setuptools
     - py >=1.4.33
-    - argparse  # [py26]
     - colorama  # [win]
 
 test:
@@ -56,3 +54,4 @@ extra:
     - goanpeca
     - nicoddemus
     - ocefpaf
+    - mingwandroid
